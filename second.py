@@ -1,13 +1,21 @@
-import math
+import json
 
-def area(a, b ,c):
-    if a+c >b and a+b > c and b+c>a:
-        p = ((a+b)+c) / 2
-        s = math.sqrt(p * (p - a) * (p - b) * (p - c))
-    return s
-a = int(input())
-b = int(input())
-c = int(input())
+registr = {'login':'passw'}
 
-result = area(a, b, c)
-print(result)
+def reg(login, paswd):
+    registr[login] = paswd
+    with open('registration', 'w') as f:
+            json.dump(registr, f)
+    return registr
+
+
+print("Введите логин")
+login = input()
+print("Введите пароль")
+paswd = input()
+if login in registr.keys():
+    print('Логин занят')
+else:
+    result = reg(login, paswd)
+    print(result)
+    
