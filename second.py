@@ -1,9 +1,13 @@
-k = [10, 5,'asdf', 5, 15, 30, 'asdf']
-z = []
-repeat = []
-for i in k:
-    if i not in z:
-        z.append(i)
-    else:
-        repeat.append(i)
-print(repeat)
+import math
+
+def area(a, b ,c):
+    if a+c >b and a+b > c and b+c>a:
+        p = ((a+b)+c) / 2
+        s = math.sqrt(p * (p - a) * (p - b) * (p - c))
+    return s
+a = int(input())
+b = int(input())
+c = int(input())
+
+result = area(a, b, c)
+print(result)
