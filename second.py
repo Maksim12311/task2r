@@ -1,9 +1,9 @@
-x = int(input())
-p = float(input())
-y = int(input())
-
-for i in range(1, 1000000):
-    if x>=y:
-    	break
-    x += round(x* (p / 100), 2)
-print(i)
+k = [10, 5,'asdf', 5, 15, 30, 'asdf']
+z = []
+repeat = []
+for i in k:
+    if i not in z:
+        z.append(i)
+    else:
+        repeat.append(i)
+print(repeat)
